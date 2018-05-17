@@ -1,0 +1,17 @@
+{
+"configurations": [
+    { 
+        "name": "Debug Main Process",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceRoot}/jupylab.js",
+        "stopOnEntry": false,
+        "args": ["."],  
+        "cwd": "${workspaceRoot}",
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+        "protocol":"inspector",
+        "env": { }, 
+        "sourceMaps": true 
+    }   
+    ]
+}

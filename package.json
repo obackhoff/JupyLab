@@ -1,0 +1,19 @@
+{
+  "name": "jupylab",
+  "version": "1.0.0",
+  "description": "Jupyterlab for the desktop",
+  "main": "jupylab.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Omar Backhoff",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^2.0.1"
+  },
+  "dependencies": {
+    "asar": "^0.14.3",
+    "request": "^2.86.0"
+  }
+}
