@@ -9,7 +9,7 @@ const { spawn } = require('child_process')
 // Wenn Sie dies nicht tun, wird das Fenster automatisch geschlossen, 
 // sobald das Objekt dem JavaScript-Garbagekollektor übergeben wird.
 let window
-
+let token = '3456789iuhwegr2143re'
 function createWindow () {
     // Erstellen des Browser-Fensters.
     window = new BrowserWindow({width: 1280, height: 780, icon: 'logo.png'})
@@ -21,16 +21,16 @@ function createWindow () {
     //     slashes: true
     // }))
 
-    window.setMenu(null)
+    // window.setMenu(null)
     window.loadFile('index.html')
     let loaded = false
     const interval = setInterval(() => {
-        request('http://localhost:8888/lab', function (error, response, body) {
+        request(`http://localhost:8888/lab`, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 clearInterval(interval)
                 if (!loaded){
                     console.log("jupyterlab is READY") 
-                    window.loadURL('http://localhost:8888/lab')
+                    window.loadURL(`http://localhost:8888/lab?token=${token}`)
                     loaded = true
                 }
             }
@@ -70,7 +70,7 @@ function createWindow () {
 // Initialisierung fertig ist und Browserfenster erschaffen kann.
 // Einige APIs können nur nach dem Auftreten dieses Events genutzt werden.
 app.on('ready', () =>{
-    spawn('jupyter', ['lab', '--no-browser', '--NotebookApp.token=""',`--NotebookApp.notebook_dir=${os.homedir()}`] )
+    spawn('jupyter', ['lab', '--no-browser', `--NotebookApp.token='${token}'`,`--NotebookApp.notebook_dir=${os.homedir()}`] )
     createWindow()
 })
 
