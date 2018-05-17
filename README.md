@@ -5,4 +5,4 @@ Requires:
 - Electron
 
 NOTICE:
-- Security for the Jupyterlab server is for the moment disabled, i.e. there is no authentication enabled.
+- Security for the Jupyterlab server is for the basic and hardcoded.
