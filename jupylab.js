@@ -6,7 +6,7 @@ const { spawn } = require('child_process')
 const generateKey = (length) => {
     s = ''
     for (i=0; i<length;i++){
-    s += Math.floor(Math.random()*10).toString()
+        s += Math.floor(Math.random()*10).toString()
     }
     return s  
 }
